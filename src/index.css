@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Libre Baskerville", serif;
+  --font-sans: "Inter", sans-serif;
+}
+
+@layer utilities {
+  /* 70s Thematic Styles */
+  .vibe-container {
+    background-color: #fdfbf7;
+    color: #262626;
+  }
+
+  .vibe-card {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.05);
+    border-radius: 1.5rem;
+  }
+
+  .vibe-header {
+    font-family: var(--font-serif);
+    color: #262626;
+    letter-spacing: -0.01em;
+  }
+
+  .vibe-accent-orange {
+    color: #c2410c;
+  }
+  
+  .vibe-bg-orange {
+    background-color: #c2410c;
+  }
+
+  .vibe-accent-gold {
+    color: #ca8a04;
+  }
+
+  .vibe-accent-green {
+    color: #3f6212;
+  }
+
+  /* Scratch Stylesheet Requirements - Updated for 70s */
+  .scratch-container-style {
+    font-family: var(--font-sans);
+    color: #44403c;
+    line-height: 1.7;
+  }
+
+  .scratch-header-style {
+    font-family: var(--font-serif);
+    font-weight: 700;
+  }
+
+  .scratch-box-style {
+    background-color: #f4efdf;
+    border: 2px solid #e5e5d1;
+    padding: 2.5rem;
+    border-radius: 2rem;
+  }
+
+  .scratch-accent-style {
+    color: #c2410c;
+    font-weight: 700;
+    font-family: var(--font-serif);
+    font-style: italic;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
