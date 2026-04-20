@@ -75,5 +75,9 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+
+  .text-glow-sm {
+    text-shadow: 0 0 15px rgba(255, 120, 0, 0.4);
+  }
 }
 

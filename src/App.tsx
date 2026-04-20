@@ -177,52 +177,42 @@ export default function App() {
                   animate={{ opacity: 1, scale: 1 }}
                   className="w-full max-w-3xl text-center"
                 >
-                  <span className="text-xs uppercase tracking-[0.4em] text-orange-600 font-bold mb-4 block">
-                    Your Result
-                  </span>
-                  <h2 className="text-5xl md:text-7xl font-serif tracking-tighter mb-12 text-stone-900">
-                    You are <span className="italic text-orange-700 underline decoration-orange-200 underline-offset-8">{resultAlbum?.title}</span>
-                  </h2>
+                  <div className="bg-orange-900 p-10 md:p-16 rounded-[3rem] shadow-2xl text-white mb-16 relative overflow-hidden group">
+                    <div className="absolute top-0 left-0 w-full h-2 bg-orange-500" />
+                    <div className="absolute -right-20 -top-20 w-64 h-64 bg-orange-800 rounded-full blur-3xl opacity-50 group-hover:bg-orange-700 transition-colors duration-1000" />
+                    
+                    <span className="text-xs uppercase tracking-[0.4em] text-orange-300 font-bold mb-6 block relative z-10">
+                      Your Result
+                    </span>
+                    <h2 className="text-5xl md:text-7xl font-serif tracking-tighter mb-8 text-white relative z-10 leading-tight">
+                      You are <span className="italic text-orange-300 underline decoration-orange-500 underline-offset-8">{resultAlbum?.title}</span>
+                    </h2>
+                    
+                    <div className="mt-8 pt-8 border-t border-white/10 relative z-10">
+                      <p className="text-xs uppercase tracking-[0.3em] text-orange-400 font-bold mb-3">Spirit Song</p>
+                      <p className="text-3xl font-serif italic text-orange-50 text-glow-sm">"{resultAlbum?.songTitle}"</p>
+                    </div>
+                  </div>
 
-                  <div className="grid md:grid-cols-2 gap-12 items-center text-left">
+                  <div className="max-w-2xl mx-auto">
                     <motion.div
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.3 }}
-                      className="relative aspect-square rounded-[3rem] overflow-hidden shadow-2xl ring-8 ring-orange-50 group"
+                      className="text-left"
                     >
-                      <img
-                        src={resultAlbum?.imageUrl}
-                        alt={resultAlbum?.title}
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                        referrerPolicy="no-referrer"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-orange-900/70 via-transparent to-transparent" />
-                      <div className="absolute bottom-8 left-8 right-8">
-                        <p className="text-xs uppercase tracking-[0.3em] text-orange-100 font-bold mb-2">{resultAlbum?.artist}</p>
-                        <p className="text-3xl font-bold text-white font-serif leading-tight">{resultAlbum?.title}</p>
-                        <div className="mt-4 pt-4 border-t border-white/20">
-                          <p className="text-[10px] uppercase tracking-[0.2em] text-orange-200 font-bold mb-1">Spirit Song</p>
-                          <p className="text-lg font-serif italic text-white leading-tight">"{resultAlbum?.songTitle}"</p>
-                        </div>
-                      </div>
-                    </motion.div>
-
-                    <motion.div
-                      initial={{ opacity: 0, x: 20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.4 }}
-                    >
-                      <p className="text-xl font-serif italic leading-relaxed text-stone-700 mb-8 border-l-4 border-orange-600 pl-8">
+                      <p className="text-xl font-serif italic leading-relaxed text-stone-700 mb-12 border-l-4 border-orange-600 pl-8">
                         {resultAlbum?.description}
                       </p>
-                      <button
-                        onClick={resetQuiz}
-                        className="flex items-center gap-3 px-10 py-5 rounded-[2rem] bg-orange-700 text-white font-bold hover:bg-orange-800 transition-all shadow-xl shadow-orange-900/20 active:scale-95"
-                      >
-                        <RotateCcw className="w-5 h-5" />
-                        Take it again
-                      </button>
+                      <div className="flex justify-center">
+                        <button
+                          onClick={resetQuiz}
+                          className="flex items-center gap-3 px-12 py-5 rounded-[2rem] bg-orange-700 text-white font-bold hover:bg-orange-800 transition-all shadow-xl shadow-orange-900/20 active:scale-95"
+                        >
+                          <RotateCcw className="w-5 h-5" />
+                          Take it again
+                        </button>
+                      </div>
                     </motion.div>
                   </div>
                 </motion.div>
